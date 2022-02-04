@@ -1,3 +1,4 @@
+var readline = require('readline-sync');
 var north = ["Armagn", "Newry", "Belfast"] // counties in the north
 var south = ["Cork", "Galway", "Kerry", "Donegal", "Waterford", "Naas", "Dublin"] // counties in the south
 class hotel{
@@ -26,13 +27,8 @@ class hotel{
 }
 
 
-const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  
-  readline.question('Where do you want to go? ', direction => {
-    var hotels = new hotel(direction)
-    console.log(hotels.northSouth())
-    readline.close();
-  });
+
+var direction = readline.question('Where do you want to go? ')
+var hotels = new hotel(direction)
+console.log(hotels.northSouth())
+
