@@ -1,4 +1,4 @@
-var readline = require('readline-sync');
+var readline = require('readline-sync'); // requires the module readline-sync
 var north = ["Armagn", "Newry", "Belfast"] // counties in the north
 var south = ["Cork", "Galway", "Kerry", "Donegal", "Waterford", "Naas", "Dublin"] // counties in the south
 class hotel{
@@ -28,7 +28,7 @@ class hotel{
 
 
 
-var direction = readline.question('Where do you want to go? ')
-var hotels = new hotel(direction)
-console.log(hotels.northSouth())
+var direction = readline.question('Where do you want to go? ') // using the module, readline asks the question in the terminal
+var hotels = new hotel(direction) // depending on your response, it will be the direction variable
+console.log(hotels.northSouth()) // outputs the northSouth function
 
