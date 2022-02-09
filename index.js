@@ -16,7 +16,7 @@ class hotel{
             var i, len, text
             for(i = 0, len = south.length, text = "";i<len; i++){
                 text += "We have hotels in " + south[i] + "." + "\n";
-            } // for every time len is greater than i(0), loop the text until len is no longer greater than i
+            } // for every time len is greater than i(0), loop until len is no longer greater than i
             return text; // prints the text after looping
         }else {
             return this.direction + " is not a valid direction." /* if this.direction is neither North, north, South, or south,  
