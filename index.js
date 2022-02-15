@@ -5,30 +5,37 @@ class hotel{
     constructor(direction){
         this.direction = direction // variable for north or south
     }
-    northSouth(){
-        if (this.direction == "North"||this.direction == "north"){ // if this.direction is North or north
+    static allHotels(){
+        var northAndSouth = north.concat(south); // combines the north and south lists
+        var i, len, text // variables for the loop
+        for(i = 0, len = north.length + south.length, text = "";i<len; i++){
+            text += "We have hotels in " + northAndSouth[i] + "." + "\n"; 
+        }
+        return text;
+    }
+
+    static northSouth(a){
+        if (a == "North"||a == "north"){ // if this.direction is North or north
             var i, len, text // variables for the loop
             for(i = 0, len = north.length, text = "";i<len; i++){
-                text += "We have hotels in " + north[i] + "." + "\n";
+                text += "We have a hotel in " + north[i] + "." + "\n";
             } // for every time len is greater than i(0), loop the text until len is no longer greater than i
             return text; // prints the text after looping
-        }else if (this.direction == "South"||this.direction == "south"){ // if this.direction is South or south
+        }else if (a == "South"||a == "south"){ // if this.direction is South or south
             var i, len, text
             for(i = 0, len = south.length, text = "";i<len; i++){
-                text += "We have hotels in " + south[i] + "." + "\n";
+                text += "We have a hotel in " + south[i] + "." + "\n";
             } // for every time len is greater than i(0), loop until len is no longer greater than i
             return text; // prints the text after looping
         }else {
-            return this.direction + " is not a valid direction." /* if this.direction is neither North, north, South, or south,  
+            return a + " is not a valid direction." /* if this.direction is neither North, north, South, or south,  
             prints that it's not a valid location */
         }
-
     }
 }
 
 
 
 var direction = readline.question('Where do you want to go? ') // using the module, readline asks the question in the terminal
-var hotels = new hotel(direction) // depending on your response, it will be the direction variable
-console.log(hotels.northSouth()) // outputs the northSouth function
-
+console.log(hotel.allHotels()) // outputs the allHotels function
+console.log(hotel.northSouth(direction)) // outputs the northSouth function
