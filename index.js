@@ -1,5 +1,5 @@
 var readline = require('readline-sync'); // requires the module readline-sync
-var north = ["Armagn", "Newry", "Belfast"] // counties in the north
+var north = ["Armagh", "Newry", "Belfast"] // counties in the north
 var south = ["Cork", "Galway", "Kerry", "Donegal", "Waterford", "Naas", "Dublin"] // counties in the south
 class hotel{
     constructor(direction){
@@ -13,16 +13,15 @@ class hotel{
         } // for every time len is greater than i(0), loop the text until len is no longer greater than i
         return text; // prints the text after looping
     } 
-
-    static northSouth(direction){
+    static northSouth(){
+        var i, len, text // variables for the loop
+        var direction = readline.question('Where do you want to go? ') // using the module, readline asks the question in the terminal
         if (direction == "North"||direction == "north"){ // if direction is North or north
-            var i, len, text // variables for the loop
             for(i = 0, len = north.length, text = "";i<len; i++){
                 text += "We have a hotel in " + north[i] + "." + "\n";
             } // for every time len is greater than i(0), loop the text until len is no longer greater than i
             return text; // prints the text after looping
         }else if (direction == "South"||direction == "south"){ // if direction is South or south
-            var i, len, text
             for(i = 0, len = south.length, text = "";i<len; i++){
                 text += "We have a hotel in " + south[i] + "." + "\n";
             } // for every time len is greater than i(0), loop until len is no longer greater than i
@@ -33,7 +32,5 @@ class hotel{
         }
     }
 }
-
-var direction = readline.question('Where do you want to go? ') // using the module, readline asks the question in the terminal
 console.log(hotel.allHotels()) // outputs the allHotels function
-console.log(hotel.northSouth(direction)) // outputs the northSouth function
+console.log(hotel.northSouth()) // outputs the northSouth function
